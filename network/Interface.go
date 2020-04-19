@@ -4,7 +4,6 @@ import (
 	"../structures"
 	"container/list"
 	"encoding/json"
-	"fmt"
 	"net"
 )
 
