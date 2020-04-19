@@ -10,8 +10,11 @@ import (
 
 func LandingPage() {
 	var (
-		interfaces structures.ReturnStructure = structures.ReturnStructure{}
-		err        error                      = nil
+		interfaces         structures.ReturnStructure = structures.ReturnStructure{}
+		unrecognisedMethod string                     = `
+			"Data": "Page broken"
+		`
+		err error = nil
 	)
 
 	interfaces = network.GetInterfaces()
@@ -23,9 +26,7 @@ func LandingPage() {
 		case "GET":
 			fmt.Fprintf(w, string(interfaces.Result))
 		default:
-			fmt.Fprintf(w, `
-				"Data": "Page broken"
-			`)
+			fmt.Fprintf(w, unrecognisedMethod)
 		}
 	})
 
