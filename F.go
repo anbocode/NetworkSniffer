@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
+	"./web"
+	//"fmt"
 )
 
 func main() {
-	fmt.Println("NetworkSniffer")
-	fmt.Println("WeApplication")
+	web.LandingPage()
 }
