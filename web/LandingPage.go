@@ -30,12 +30,14 @@ func handleFunc01(w http.ResponseWriter, r *http.Request) {
 
 func LandingPage() {
 	var (
-		fileServer http.Handler = http.FileServer(http.Dir("static/"))
+		fileServer http.Handler = http.FileServer(http.Dir("./static"))
 		err        error        = nil
 	)
 
 	http.HandleFunc("/interfaces", handleFunc01)
-	http.Handle("/main/", http.StripPrefix("/main/", fileServer))
+	http.Handle("/web/", http.StripPrefix("/web/", fileServer))
+
+	fmt.Println(fileServer)
 
 	if http.ListenAndServe("127.0.0.1:8989", nil); err != nil {
 		fmt.Println("Error | http.ListenAndServe() : ", err.Error())

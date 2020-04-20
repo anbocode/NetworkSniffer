@@ -2,7 +2,6 @@ package main
 
 import (
 	"./web"
-	//"fmt"
 )
 
 func main() {
