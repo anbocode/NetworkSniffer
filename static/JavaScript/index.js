@@ -29,8 +29,13 @@
 
     for (let key in json_element) {
       html += key + " : " + json_element[key] + "<br>";
+      if (key.toLowerCase() == "index") {
+        li.setAttribute("interfaceno", json_element[key]);
+      }
     }
 
+    li.setAttribute("class", "interfaceItem");
+    li.setAttribute("onclick", "startSniffing(this)");
     li.innerHTML = html
 
     ol.appendChild(li)
@@ -38,3 +43,9 @@
 
   element.appendChild(ol)
 })();
+
+(startSniffing = async (element) => {
+  "use strict";
+
+  let selectedInterface = element.getAttribute("interfaceno");
+});
