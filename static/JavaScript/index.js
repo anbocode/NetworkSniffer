@@ -22,6 +22,7 @@
   let ol = document.createElement("ol");
   ol.setAttribute("id", "interfaceList");
 
+  
   json.forEach(json_element => {
     let li   = document.createElement("li");
     let html = "";
@@ -31,8 +32,9 @@
     }
 
     li.innerHTML = html
+
     ol.appendChild(li)
   });
 
-  element.appendChild(ol)  
+  element.appendChild(ol)
 })();
