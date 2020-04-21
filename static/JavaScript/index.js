@@ -42,10 +42,16 @@
   });
 
   element.appendChild(ol)
-})();
+});
 
 (startSniffing = async (element) => {
   "use strict";
 
   let selectedInterface = element.getAttribute("interfaceno");
+  let url               = "http://localhost:8989/startsniffing?interfaceNumber=" + selectedInterface;
+  let response          = await fetch(url, {
+    "method": "GET"
+  })
+  let json              = await response.json();
+  console.log(json);
 });

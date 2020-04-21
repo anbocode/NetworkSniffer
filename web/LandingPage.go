@@ -14,6 +14,8 @@ func LandingPage() {
 	)
 
 	http.HandleFunc("/interfaces", GetInterface)
+	http.HandleFunc("/startsniffing", StartSniffing)
+
 	http.Handle("/web/", FileServer("/web/"))
 
 	if http.ListenAndServe("127.0.0.1:8989", nil); err != nil {
